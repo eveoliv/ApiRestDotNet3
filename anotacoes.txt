@@ -1,0 +1,36 @@
+﻿
+-- Material Api ----------------------------------------------------------------------------
+https://www.youtube.com/watch?v=li_vY4vJbA4
+https://www.youtube.com/watch?v=6xPi_SVwfGM
+https://www.youtube.com/watch?v=Ef5T0dBT9eI
+
+-- Material Docker -------------------------------------------------------------------------
+http://www.macoratti.net/19/01/dock_mssql1.htm
+https://blog.sqlauthority.com/2019/04/20/sql-server-docker-volume-and-persistent-storage/
+
+-- SqlServer -------------------------------------------------------------------------------
+https://www.devmedia.com.br/criando-tabelas-usando-o-sql-server-management-studio/17425
+https://www.w3schools.com/sql/sql_autoincrement.asp
+
+create database CursoApiDb
+
+use CursoApiDb
+
+Create table Usuarios
+(
+		UsuarioId int IDENTITY(1,1) PRIMARY KEY,
+        Nome varchar(50) NOT NULL,
+        Senha varchar(30) NOT NULL,
+        Email varchar(50) NOT NULL       
+)
+
+Create unique index ix_Nome on Usuarios (Nome)
+
+insert into Usuarios (Nome, Senha, Email)
+values
+('Paulo', 'P@ulo123', 'paulo@email'),
+('Jose', 'J@se123', 'jose@email'),
+('Ana', 'A@na123', 'ana@email'),
+('Nico', 'N@co123', 'nico@email')
+
+select * from Usuarios
